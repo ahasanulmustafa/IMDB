@@ -4,7 +4,7 @@ from .models import Profile, Media, Cast, Movie, Genre, RatingsAndComments
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'first_name', 'last_name', 'email', 'password', 'date_of_birth', 'age', 'country']
+    list_display = ['id', 'password', 'date_of_birth', 'age', 'country']
 
 
 @admin.register(Media)
@@ -19,7 +19,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'poster', 'release_date', 'Media', 'genre', 'is_released']
+    list_display = ['id', 'title', 'poster', 'release_date', 'Media', 'get_genre', 'is_released']
 
 
 @admin.register(Cast)
